@@ -1,0 +1,8 @@
+packer build \
+    -var 'aws_access_key=' \
+    -var 'aws_secret_key=' \
+    example.json
+
+
+use the above command with AWS keys to run the command. 
+Due to security reason the actual command with keys is not checkedin

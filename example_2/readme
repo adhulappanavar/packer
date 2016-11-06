@@ -1,0 +1,28 @@
+Great example everything worked except systemctl commands
+which means on restart of the instance it would not start node server
+
+The issue is that ubuntu version
+
+command to check ubuntu version is 
+$ lsb_release -a
+        No LSB modules are available.
+        Distributor ID:	Ubuntu
+        Description:	Ubuntu 14.04.3 LTS
+        Release:	14.04
+        Codename:	trusty
+
+systemctl is available only on Ubuntu 15.04 onwards
+Ref : http://askubuntu.com/questions/638838/getting-razercfg-to-work-using-systemd-systemctl-command-not-found
+On Ubuntu, systemd is used on Ubuntu 15.04 and newer. Since you're using Ubuntu 14.04, you need 
+to use init-scripts and the service command (for example, sudo service razerd start). 
+
+upstart (service) is available on Ubuntu 14.04
+
+
+Refer to http://blog.terminal.com/getting-started-with-upstart/  on how to write 
+
+Refer to deploy_upstart.sh in scripts directory in this folder
+
+Let's try all this in a clean example - example3
+
+
