@@ -1,0 +1,21 @@
+Ref : https://www.udemy.com/learn-devops-infrastructure-automation-with-terraform/learn/v4/t/lecture/5836462
+Learn DevOps: Infrastructure Automation With Terraform
+by Edward Viaene DevOps, Cloud, Big Data Specialist
+https://www.udemy.com/learn-devops-infrastructure-automation-with-terraform/learn/v4/content
+
+Github : https://github.com/wardviaene/terraform-course
+
+The file anil_terraform_credentials.csv is not checkedin
+* Steps used to create the credentials
+    * login to aws console
+    * choose IAM
+        * create users
+            * Username : anil_terraform
+            * Tick : Generate key for the users
+            * copy & download the keys
+        * Give anil_terraform user Admin rights
+            * Select the user
+            * Click on Permissions --> Attach Policy
+                * Selct AdministrativeAccess policy
+
+
