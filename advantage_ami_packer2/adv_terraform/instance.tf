@@ -8,8 +8,10 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   key_name = "${aws_key_pair.mykey.key_name}"
   
-  # the security group
-  vpc_security_group_ids = ["${var.sg_id}"]
+
+  # Our Security group to allow HTTP and SSH access
+  security_groups = ["${aws_security_group.default.name}"]
+
 
 
   connection {
