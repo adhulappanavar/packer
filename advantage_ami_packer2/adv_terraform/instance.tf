@@ -3,10 +3,6 @@ resource "aws_key_pair" "mykey" {
   public_key = "${file("${var.PATH_TO_PUBLIC_KEY}")}"
 }
 
-resource "aws_eip" "default" {
-  instance = "${aws_instance.example.id}"
-  vpc = true
-}
 
 resource "aws_instance" "example" {
   ami = "${lookup(var.AMIS, var.AWS_REGION)}"
@@ -25,3 +21,7 @@ resource "aws_instance" "example" {
   }
 }
 
+resource "aws_eip_association" "eip_assoc" {
+  instance_id = "${aws_instance.example.id}"
+  allocation_id = "eipalloc-2c86bd13"
+}
