@@ -1,5 +1,7 @@
 # Our default security group to access
 # the instances over SSH and HTTP
+# Ref : https://github.com/hashicorp/terraform/blob/master/examples/aws-eip/main.tf
+
 resource "aws_security_group" "default" {
   name        = "eip_example"
   description = "Used in the terraform"
@@ -19,6 +21,15 @@ resource "aws_security_group" "default" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  # HTTP access from anywhere to Angular2 on port 3000
+  ingress {
+    from_port   = 3000
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 
   # outbound internet access
   egress {
